@@ -1,0 +1,27 @@
+<%= form_for(@new_info, url: informations_path) do |i| %>
+  <%= i.label :information %>
+  <%= i.text_field :information %>
+
+  <%= i.label :forecast_date %>
+  <%= i.date_field :forecast_date %>
+
+  <%= i.label :close %>
+  <%= i.check_box :close %>
+
+  <%= i.submit %>
+<% end %>
+
+<% @infos.each do |info| %>
+  <%= form_for(info) do |i| %>
+    <%= i.label :information %>
+    <%= i.text_field :information %>
+
+    <%= i.label :forecast_date %>
+    <%= i.date_field :forecast_date %>
+
+    <%= i.label :close %>
+    <%= i.check_box :close %>
+
+    <%= i.submit %>
+  <% end %>
+<% end %>

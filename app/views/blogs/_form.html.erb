@@ -1,0 +1,11 @@
+<%= form_for(blog) do |f| %>
+    <%= f.label :tag %>
+    <%= f.text_field :tag, class: 'form-control' %>
+
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+
+    <%= f.label :Content %>
+    <%= f.text_area :content, class: 'blog_content', rows: "50" %>
+  <%= f.submit "更新する", class: "btn btn-primary" %>
+<% end %>
