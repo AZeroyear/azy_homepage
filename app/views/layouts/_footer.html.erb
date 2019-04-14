@@ -1,0 +1,18 @@
+<footer>
+  <div class="container py-2 px-5">
+  <nav>
+    <div class="row">
+      <%= link_to("Copy right(c) Azy -Achive Zero Year Inc.- All rights reserved.",
+      root_path, class: "text-white small") %>
+      <%= link_to "Home", root_path, class: "ml-auto small text-white px-2" %>
+      <%= link_to "Blogs", blogs_path, class: "small text-white px-2" %>
+      <%= link_to "About/Contact", about_path, class: "small text-white px-2" %>
+      <% if user_signed_in? %>
+        <%= link_to('Admin', users_path, class: "small text-white px-2") %>
+      <% else %>
+        <%= link_to('Admin', new_user_session_path, class: "small text-white px-2") %>
+      <% end %>
+  </div>
+  </nav>
+</div>
+</footer>

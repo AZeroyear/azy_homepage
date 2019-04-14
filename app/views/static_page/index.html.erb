@@ -1,12 +1,67 @@
-<h1>Hello</h1>
-this is homepage by azy.
+<section class='wrapper'><div class = 'profile'>
+  <h1>Azy</h1>
+  <h2> - Achive zero year - </h2>
+  <p>From the lost years, to become 0 year as new age by technology.</p>
+  <h5>機械系技術者からプラグラマーへの転身を目指して頑張るブログです</h5>
+  <%= link_to "Learn More", about_path, class: "btn learn" %>
+</div>
 
-<% @informations.each do |information| %>
-  <%= information.information %>
-<% end %>
+<section class='work'><div class='container'>
+<h2><%= fa_icon("briefcase") %> Work References</h2>
+<p>実績</p>
+<div class='row justify-content-center'>
+<div class="category col-md-3">
+  <a href="https://eng.eastazy.work" target='_blank'>
+    <div class='backimg'><%= fa_icon("calculator 4x") %></div>
+    <h3>ENGINEER.ico</h3>
+    <p>単位付き計算機や自動強度計算機など　機械系技術者視点のサービスを運営しています</p>
+  </a>
+</div>
+<div class="category col-md-3">
+  <a href="https://excel.eastazy.work" target='_blank'>
+    <div class='backimg'><%= image_tag("Excellogo.png") %></div>
+    <h3>EXCEL.ico</h3>
+    <p>中級者向けのエクセルのTipsを盛り込んだ エクセル情報サービスを運営しています</p>
+  </a>
+</div>
+<div class="category col-md-3">
+  <%= link_to(webpage_path) do %>
+    <div class='backimg'><%= image_tag("WebPagelogo.png") %></div>
+    <h3>Build Home page</h3>
+    <p>目的に合わせたホームページ/システムを制作します</p>
+  <% end %>
+</div>
+<div class="category col-md-3 constract">
+  <a href="#">
+    <div class='backimg'><%= image_tag("Kodawarilogo.png") %></div>
+    <h3>Kodawari</h3>
+    <p>Comming soon</p>
+    <p>あなたのこだわりをシェアしよう</p>
+  </a>
+</div>
+<div class="category col-md-3 constract">
+  <a href="#">
+    <div class='backimg'><%= image_tag("EPClogo.png") %></div>
+    <h3>EPC Framework</h3>
+    <p>Comming soon</p>
+    <p>EPCシステムの制作</p>
+  </a>
+</div>
+</div></section>
 
-<p>
-<% @blogs.each do |blog| %>
-  <%= blog.title %>
-<% end %>
-</p>
+<section class='container blogs'>
+<h2><%= link_to(blogs_path) do %>
+  <%= fa_icon("rss") %> Blogs
+  <% end %>
+</h2>
+<div class='row justify-content-center'>
+  <%= render @blogs %>
+</div>
+</section>
+
+<section class='information'>
+<h2><%= fa_icon("info-circle") %> Information</h2>
+  <%= render partial: 'informations/information', collections: @informations %>
+  <%= link_to('EDIT', informations_path, class: 'btn') if user_signed_in? %>
+</section>
+</section>

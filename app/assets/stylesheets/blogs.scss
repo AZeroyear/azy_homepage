@@ -1,3 +1,81 @@
 // Place all the styles related to the blogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.blogcover{
+  margin-top: 2rem;
+  color: black;
+}
+
+.tag {
+  display: inline-block;
+  margin: 0.1rem 0.2rem;
+  border-radius: 0.2rem;
+  padding: 0.2rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #151515;
+  &:hover{
+    color:white;
+    opacity: 0.6;
+  }
+}
+.addtag{
+  opacity: 0.6;
+}
+
+.blogshow{
+  max-width: 750px;
+  margin: 2rem auto 1rem;
+  text-align: left;
+  & h1{
+    font-size: 2.0rem;
+    margin: 1rem auto;
+  }
+  & .flex{
+    display: flex;
+    align-items: center;
+    margin: 0.5rem;
+  }
+  & img{
+    flex: 0 0 auto;
+    border-radius: 50%;
+    height: 50px;
+  }
+  & .date{
+    font-size: 0.8rem;
+    color: #696969;
+  }
+  & .content{
+    margin: 0.6rem auto;
+    font-size: 1.1rem;
+    color: rgb(68, 68, 68);
+    line-height: 1.8rem;
+    letter-spacing: 0.1rem;
+  }
+  & .tag {
+    padding: 0.2rem;
+    font-size: 0.8rem;
+  }
+  & .prettyprint{
+    font-size: 0.9rem;
+    font-family: Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+    overflow: auto;
+    resize: horizontal;
+  }
+}
+
+.blog-edit{
+  margin: auto;
+  margin-top: 2rem;
+  max-width: 700px;
+  & label{
+    float: left;
+  }
+  & textarea{
+    min-height: 25rem;
+  }
+  & .form-control{
+    margin: auto;
+  }
+}

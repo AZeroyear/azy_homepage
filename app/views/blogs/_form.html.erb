@@ -6,6 +6,6 @@
     <%= f.text_field :title, class: 'form-control' %>
 
     <%= f.label :Content %>
-    <%= f.text_area :content, class: 'blog_content', rows: "50" %>
-  <%= f.submit "更新する", class: "btn btn-primary" %>
+    <%= f.text_area :content, class: 'form-control blog_content', id: 'blog' %>
+  <%= f.submit "update", class: "btn" %>
 <% end %>

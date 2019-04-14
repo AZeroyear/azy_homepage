@@ -1,0 +1,30 @@
+<nav class="navbar">
+  <div class="navbar-brand">
+    <%= link_to(root_path) do %>
+    <%= image_tag("icon.png", :alt => "icon") %>
+    <%= image_tag("Logo.png", :alt => "Logo") %>
+    <% end %>
+  </div>
+  <h2><%= link_to(blogs_path) do %>
+    <%= fa_icon(@awesome) %>
+    <%= @header_title %>
+    <% end %>
+  </h2>
+
+  <button class="navbar-toggler" data-toggle="collapse" data-target="#menu">
+    <span class="navi"><%= fa_icon("list") %></span><!--<span class="navbar-toggler-icon"></span>-->
+  </button>
+  <div id="menu" class="collapse navbar-collapse">
+    <ul class="navbar-nav">
+      <%= link_to(root_path) do %>
+        <li class="nav-item">Home</li>
+      <% end %>
+      <%= link_to(about_path) do %>
+        <li class="nav-item">About / Contact</li>
+      <% end %>
+      <%= link_to(blogs_path) do %>
+        <li class="nav-item">Blogs</li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

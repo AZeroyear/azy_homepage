@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Homepage</title>
-    <%= csrf_meta_tags %>
+  <head><%= render 'layouts/head' %></head>
+  <body class=<%= @static %>>
+    <header> <%= render 'layouts/header' %></header>
+      <div class='alert-success'><%= notice %></div>
+      <div class='alert-warning'><%= alert %></div>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-  <body>
-    <%= yield %>
+      <%= yield %>
+
+    <footer> <%= render 'layouts/footer' %></footer>
   </body>
 </html>

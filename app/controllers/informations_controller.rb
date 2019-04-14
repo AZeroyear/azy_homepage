@@ -1,4 +1,5 @@
 class InformationsController < ApplicationController
+  before_action :authenticate_user!, only: :users
   def index
     @infos = Information.all.reverse_order
     @new_info = Information.new

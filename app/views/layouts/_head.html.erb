@@ -1,0 +1,17 @@
+<%= csrf_meta_tags %>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<%= favicon_link_tag('favicon.ico') %>
+<title> <%= "#{@title} | Azy" %> </title>
+<meta property="og:url" content="<%= request.url %>" >
+<meta property="og:title" content="<%= @title %>" >
+<meta property="og:type" content="website">
+<meta property="og:description" content="<%= @meta %>" >
+<meta property="og:image" content="<%= @photo %>" >
+<meta property="og:site_name" content="http://eastazy.work/"/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@EastAzy" >
+<meta name="description" content="<%= @meta %>" >
+<meta content="blog" property="hatena:service_type">
+<meta content="note" property="hatena:service_code">

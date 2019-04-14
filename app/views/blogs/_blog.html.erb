@@ -1,0 +1,22 @@
+<%= link_to(blog_path(blog.id), class: "col-md-3 blog") do %>
+  <span class="date"><%= blog.updated_at.strftime("%Y年%m月%d日") %>
+  <% if blog.tag.present?
+      blog.tag.split(",").each do |tag| %>
+      <span class='tag'><%= blog.tag %></span>
+    <%#= link_to(tag, user_tag_path(@user.username, tag), class: "tag pull-right mx-1") %>
+    <% end %>
+  <% end %>
+  </span>
+
+  <% blog_title = blog.title || "no title" %>
+  <div class="title"><%= blog.title %></div>
+    <%#= link_to blog_title, user_blog_path(@user.username, blog.id) %>
+
+  <p class="content">
+    <% if blog.content.present? %>
+      <%= strip_tags(blog.content.truncate(50)) %>
+      <%#= link_to(image_tag(blog.picture, class: "img-rounded w-25"), user_blog_path(@user.username, blog.id)) if blog.picture.present? %>
+      <%#= link_to strip_tags(blog.content.truncate(50)), user_blog_path(@user.username, blog.id) %>
+    <% end %>
+  </p>
+<% end %>
