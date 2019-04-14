@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'mini_racer'
 gem 'devise'
 gem "font-awesome-rails"
 gem 'bootstrap',               '~> 4.1.1'
