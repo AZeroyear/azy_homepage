@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   get 'webpage' => 'static_page#webpage'
   get '/blogs/tag/:tag' => 'blogs#tag'
   get '/users' => 'static_page#users'
+
   resources :blogs
   resources :informations
-  devise_for :users
+  devise_for :users, :controllers => {
+    :registrations => "users/registrations",
+  }
 end
