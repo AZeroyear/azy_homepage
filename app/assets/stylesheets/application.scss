@@ -116,14 +116,14 @@ a:hover{
   margin: 2rem auto 1rem;
   padding: 1rem;
   max-width: 500px;
-  height: calc(100vh - 3.6rem);
+  height: calc(100vh - 10rem);
   line-height: 1rem;
   text-overflow: ellipsis;
   color: #fff;
   position: relative;
   & .learn{
     position: absolute;
-    bottom: 15rem;
+    bottom: 0;
     transform: translate(-50%,-50%);
     animation: fadeIn 3s ease 0s 1 normal;
     -webkit-animation: fadeIn 3s ease 0s 1 normal;
@@ -180,37 +180,40 @@ a:hover{
   color: #fff;
   margin-bottom: 3rem;
 }
-
-
 .blog {
-  height: 170px;
+  height: 185px;
+  padding:0;
   background-color: #fff;
   margin: 0.4rem;
   border: 0.5px solid #151515;
   border-radius: 0.2rem;
-  position: relative;
-  color: black; //#606c76;
+  color: black;
+  overflow: hidden;
+  text-align: left;
   & .title {
     font-size: 1.4rem;
     margin-top: 0.1em;
     color: black;
+    padding:0.4rem;
+    text-align: center;
   }
   & .tag {
+    display:inline-block;
     margin: 0;
     padding: 0.2rem;
-    font-size: 0.8rem;
-    position: absolute;
-    top:0;
-    left: 0;
+    font-size: 0.9rem;
     background-color: #151515;
   }
   & .date {
     font-size: 0.8rem;
     color: #696969;
+    text-align: center;
   }
   .content {
     font-size: 0.9rem;
     color: #606c76;
+    padding:0.4rem;
+    text-align: center;
     & img {
       float: left;
     }

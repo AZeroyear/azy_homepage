@@ -3,7 +3,7 @@ class BlogsController < ApplicationController
   before_action :set_title
   def index
     @blogs = Blog.all.order(:updated_at).reverse
-    @tags = Blog.pluck(:tag).uniq
+    @tags = all_tags
     @tag = "ALL"
   end
 
@@ -38,9 +38,9 @@ class BlogsController < ApplicationController
   end
 
   def tag
-    @blogs = Blog.where(tag: params[:tag])
+    @blogs = Blog.where('tag LIKE ?', "%#{params[:tag]}%")
     @tag = params[:tag]
-    @tags = Blog.pluck(:tag).uniq
+    @tags = all_tags
     render 'index'
   end
 
@@ -60,5 +60,9 @@ private
     @awesome = "rss"
     @title = "Blog"
     @meta = "Blogs made by Azy"
+  end
+
+  def all_tags
+    Blog.pluck(:tag).uniq.map{|tag| tag.split(", ") }.flatten
   end
 end
