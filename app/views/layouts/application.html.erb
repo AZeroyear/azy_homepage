@@ -7,7 +7,11 @@
       <div class='alert-warning'><%= alert %></div>
 
       <%= yield %>
-
+    <section class="sns">
+      <h4><%= fa_icon("user-circle") %> ACCOUNT</h4>
+      <%= link_to(fa_icon("twitter-square 3x"), "https://twitter.com/EastAzy", target: :_blank) %>
+      <%= link_to(fa_icon("github-square 3x"), "https://github.com/AZeroyear", target: :_blank) %>
+    </section>
     <footer> <%= render 'layouts/footer' %></footer>
   </body>
 </html>

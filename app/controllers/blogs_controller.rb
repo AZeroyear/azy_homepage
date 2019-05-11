@@ -63,6 +63,6 @@ private
   end
 
   def all_tags
-    Blog.pluck(:tag).uniq.map{|tag| tag.split(", ") }.flatten
+    Blog.pluck(:tag).map{|tag| tag.split(", ") }.flatten.uniq
   end
 end
